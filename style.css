@@ -96,7 +96,7 @@ footer {
   justify-content: space-evenly;
   align-items: center;
   bottom: 0;
-  position: absolute;
+  position: fixed;
   width: 100vw;
 }
 footer p {
@@ -104,4 +104,43 @@ footer p {
 }
 footer img {
   max-width: 3.2rem;
+}
+
+.catalogMain {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.filtersSideBar {
+  max-width: 20%;
+  height: 35vh;
+  border: 1px black solid;
+  border-radius: 1%;
+  background-color: rgb(179, 179, 179);
+  padding: 1rem;
+}
+.filtersSideBar h3 {
+  text-align: center;
+}
+.filtersSideBar div span {
+  font-family: "Lato", sans-serif;
+  font-size: 1.2rem;
+}
+
+.productSection {
+  display: grid;
+  grid-template-columns: 10fr 10fr;
+  grid-template-rows: 10fr 10fr 10fr;
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 8rem;
+  position: relative;
+  left: 13%;
+  margin-top: 40px;
+}
+.productSection .product {
+  background-color: lightgray; /* Replace with your actual product card styling */
+  padding: 1rem;
+  width: 300px;
+  height: 300px; /* Adjust the height of each product card */
+  margin-bottom: 2rem; /* Adjust the margin between product cards */
 }/*# sourceMappingURL=style.css.map */
