@@ -131,12 +131,15 @@ footer img {
   display: flex;
   flex-flow: row wrap;
   position: relative;
-  margin: 0 0 4rem 3rem;
+  margin: 0 0 4rem 5rem;
 }
 .productSection .product {
   max-width: 300px;
   max-height: 300px;
   margin: 2rem 2rem 5rem 2rem;
+}
+.productSection .product:hover {
+  cursor: pointer;
 }
 .productSection .product img {
   top: 0;
@@ -153,4 +156,7 @@ footer img {
 .productSection .product span {
   display: block;
   text-align: center;
+}
+.productSection .product span:hover {
+  cursor: text;
 }/*# sourceMappingURL=style.css.map */
