@@ -42,7 +42,6 @@ ul{
     }
 }}}
 
-
 .catalogCategories{
     display: flex;
     flex-flow: row nowrap;
@@ -108,16 +107,14 @@ footer{
 
 .catalogMain{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
 }
 
 .filtersSideBar{
-    max-width: 20%;
-    height: 35vh;
-    border: 1px black solid;
-    border-radius: 1%;
-    background-color: rgb(179, 179, 179);
-    padding: 1rem;
+    margin: 1rem;
+    width: fill-available;
+    max-width: fit-content;
+
     h3{
         text-align: center;
     }
@@ -128,23 +125,35 @@ footer{
 }
 
 .productSection{
-    display: grid;
-
-    grid-template-columns: 10fr 10fr;
-    grid-template-rows: 10fr 10fr 10fr;
-    grid-auto-rows: minmax(200px, auto);
-    grid-gap: 8rem;
+    display: flex;
+    flex-flow: row wrap;
     position: relative;
-    left:13%;
-    margin-top:40px;
+    margin: 0 0 4rem 3rem;
     
     .product{
         
-        background-color: lightgray; /* Replace with your actual product card styling */
-        padding: 1rem;
-        width: 300px;
-        height: 300px; /* Adjust the height of each product card */
-        margin-bottom: 2rem; /* Adjust the margin between product cards */
+        max-width: 300px;
+        max-height: 300px;
+        margin: 2rem 2rem 5rem 2rem; 
+    
+        img{
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+               object-fit: cover;
+        }
+
+        h3{
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        span{
+                display:block;
+                text-align: center;
+        }
     }
     
 }
