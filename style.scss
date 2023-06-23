@@ -33,6 +33,7 @@ ul{
         margin: -16px 0px -16px;
         &:hover{background-color: darkgrey;}
         a{
+            font-family: 'Lato', sans-serif;
             text-decoration: none;
             color: white;
             &:visited{ color: white; }
@@ -131,35 +132,51 @@ footer{
     margin: 0 0 4rem 5rem;
     
     .product{
-        
-        max-width: 300px;
+
+        .productAdd{
+
         max-height: 300px;
         margin: 2rem 2rem 5rem 2rem; 
+
         &:hover{
             cursor: pointer;
         }
-    
-        img{
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            -o-object-fit: cover;
-               object-fit: cover;
+        
+            img{
+                width: 20rem;
+                height: 20rem;
+                object-fit: cover;
+            }
+            
+            h3{
+                text-align: center;
+            }
+
+            p{
+                opacity: 0;
+                background-color: black;
+                color: white;
+                max-width: 20rem;
+                max-height: 20rem;
+                margin-top: -1.4rem;
+                height: fill-available;
+                width: fill-available;
+                text-align: center;
+                vertical-align: center;
+                transition: 0.7s ease;
+            }
+            
+            &:hover p{
+                opacity: 0.7;
+                transition: 0.7s ease;
         }
 
-        h3{
-            margin-bottom: 10px;
-            text-align: center;
         }
-
-        span{
+            
+            span{
                 display:block;
                 text-align: center;
-                &:hover{
-                    cursor:text;
-                }
-        }
+                 }
     }
     
 }

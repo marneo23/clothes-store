@@ -1,115 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-    
-    <body>
-      <header>
-        <nav>
-          <h1>Shop Name</h1>
-          <ul>
-            <li>
-              <a href="index.html"> Home </a>
-            </li>
-            <li>
-              <a href="catalog.html"> Shop </a>
-            </li>
-  
-            <li>
-              <a href=""> About Us </a>
-            </li>
-            <li>cart
-              <span class="cartCount"></span>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    
-        <main class="catalogMain">
+  </head>
 
-            <section class="filtersSideBar">
+  <body>
+    <header>
+      <nav>
+        <h1>Shop Name</h1>
+        <ul>
+          <li>
+            <a href="index.html"> Home </a>
+          </li>
+          <li>
+            <a href="catalog.html"> Shop </a>
+          </li>
 
-                <h3>Filtros</h3>
+          <li>
+            <a href=""> About Us </a>
+          </li>
+          <li>
+            cart
+            <span class="cartCount"></span>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-                <div class="filter">
-                <input type="radio" name="filter" id="masvendidos">
-                <span>Más Vendidos</span>
-                </div>
+    <main class="catalogMain">
+      <section class="filtersSideBar">
+        <h3>Filtros</h3>
 
-                 <div class="filter">
-                <input type="radio" name="filter" id="alfabeticamente1">
-                <span>Alfabeticamente (A-Z)</span>
-                </div>
+        <div class="filter">
+          <input type="radio" name="filter" id="masvendidos" />
+          <span>Más Vendidos</span>
+        </div>
 
-                <div class="filter">
-                <input type="radio" name="filter" id="alfabeticamente2">
-                <span>Alfabeticamente (Z-A)</span>
-                </div>
+        <div class="filter">
+          <input type="radio" name="filter" id="alfabeticamente1" />
+          <span>Alfabeticamente (A-Z)</span>
+        </div>
 
-                <div class="filter">
-                <input type="radio" name="filter" id="precio1">
-                <span>Precio (Mayor-Menor)</span>
-                </div>
+        <div class="filter">
+          <input type="radio" name="filter" id="alfabeticamente2" />
+          <span>Alfabeticamente (Z-A)</span>
+        </div>
 
-                <div class="filter">
-                <input type="radio" name="filter" id="precio2">
-                <span>Precio (Menor-Mayor)</span>
-                </div>
+        <div class="filter">
+          <input type="radio" name="filter" id="precio1" />
+          <span>Precio (Mayor-Menor)</span>
+        </div>
 
-            </section>
-            
-            <section class="productSection">
-               
-                <div class="product">
-                    <img src="assets/img/catalog/cap1.jpg" alt="cap">
-                    <h3>"ESSENTIALS" CAP</h3>
-                    <span>$1</span>
-                </div>
+        <div class="filter">
+          <input type="radio" name="filter" id="precio2" />
+          <span>Precio (Menor-Mayor)</span>
+        </div>
+      </section>
 
-                <div class="product">
-                  <img src="assets/img/catalog/parka1.jpg" alt="parka">
-                  <h3>MOCHA PARKA</h3>
-                  <span>$1</span>
-                </div>
+      <section class="productSection">
+        <div class="product">
+          <div class="productAdd" value="5" id="essentialsCap">
+            <img src="assets/img/catalog/cap1.jpg" alt="cap" />
+            <p>Add to Cart</p>
+            <h3>"ESSENTIALS" CAP</h3>
+          </div>
+          <span>$5</span>
+        </div>
 
-                <div class="product">
-                  <img src="assets/img/catalog/tshirt1.jpg" alt="T-Shirt">
-                  <h3>NATURE TEE</h3>
-                  <span>$1</span>
-                </div>
-                
-                <div class="product">
-                  <img src="assets/img/catalog/cap2.jpg" alt="cap">
-                  <h3>"ESSENTIALS" BUCKET CAP</h3>
-                  <span>$1</span>
-                </div>
+        <div class="product">
+          <div class="productAdd" value="20" id="mochaParka">
+            <img src="assets/img/catalog/parka1.jpg" alt="parka" />
+            <p>Add to Cart</p>
+            <h3>MOCHA PARKA</h3>
+          </div>
+          <span>$20</span>
+        </div>
 
-                <div class="product">
-                  <img src="assets/img/catalog/parka2.jpg" alt="parka">
-                  <h3>NIGHT PARKA</h3>
-                  <span>$1</span>
-                </div>
+        <div class="product">
+          <div class="productAdd" value="10" id="natureTee">
+            <img src="assets/img/catalog/tshirt1.jpg" alt="T-Shirt" />
+            <p id="esad">Add to Cart</p>
+            <h3>NATURE TEE</h3>
+          </div>
+          <span>$10</span>
+        </div>
 
+        <div class="product">
+          <div class="productAdd" value="5" id="bucketCap">
+            <img src="assets/img/catalog/cap2.jpg" alt="cap" />
+            <p>Add to Cart</p>
+            <h3>"ESSENTIALS" BUCKET CAP</h3>
+          </div>
+          <span>$5</span>
+        </div>
 
-               <div class="product">
-                <img src="assets/img/catalog/cap3.jpg" alt="cap">
-                <h3>"ESSENTIALS" BAG</h3>
-                <span>$1</span>
-               </div>
+        <div class="product">
+          <div class="productAdd" value="22" id="nightParka">
+            <img src="assets/img/catalog/parka2.jpg" alt="parka" />
+            <p>Add to Cart</p>
+            <h3>NIGHT PARKA</h3>
+          </div>
+          <span>$22</span>
+        </div>
 
+        <div class="product">
+          <div class="productAdd" value="1" id="essentialsBag">
+            <img src="assets/img/catalog/cap3.jpg" alt="cap" />
+            <p>Add to Cart</p>
+            <h3>"ESSENTIALS" BAG</h3>
+          </div>
+          <span>$7</span>
+        </div>
+      </section>
+    </main>
 
-        </main>
+    <footer>
+      <p>All rights reserved</p>
+      <img src="assets/img/logo.png" alt="logo" />
+    </footer>
+  </body>
 
-        <footer>
-            <p>All rights reserved</p>
-            <img src="assets/img/logo.png" alt="logo" />
-          </footer>
-</body>
-<script src="index.js"></script>
-
+  <script src="products.js"></script>
+  <script src="index.js"></script>
 </html>
