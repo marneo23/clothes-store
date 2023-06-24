@@ -174,4 +174,26 @@ footer img {
 .productSection .product span {
   display: block;
   text-align: center;
+}
+
+.cart {
+  visibility: hidden;
+  position: absolute;
+  width: 15vw;
+  max-height: -webkit-fill-available;
+  max-height: -moz-available;
+  max-height: fill-available;
+  right: 0%;
+  background-color: gainsboro;
+}
+.cart h3 {
+  text-align: center;
+}
+
+.cart.openCart {
+  visibility: visible;
+}
+
+.cartBtn {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

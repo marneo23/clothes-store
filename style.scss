@@ -180,3 +180,27 @@ footer{
     }
     
 }
+
+//Cart
+.cart{
+    visibility: hidden;
+    position: absolute;
+    width: 15vw;
+    max-height: fill-available;
+    right:0%;
+    background-color: gainsboro;
+
+    h3{
+        text-align: center;
+    }
+
+
+}
+
+.cart.openCart{
+    visibility: visible;
+}
+
+.cartBtn{
+    cursor: pointer;
+}
