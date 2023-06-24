@@ -179,12 +179,13 @@ footer img {
 .cart {
   visibility: hidden;
   position: absolute;
-  width: 15vw;
+  max-width: 17.5vw;
+  width: 100%;
   max-height: -webkit-fill-available;
   max-height: -moz-available;
   max-height: fill-available;
-  right: 0%;
   background-color: gainsboro;
+  right: 0;
 }
 .cart h3 {
   text-align: center;
@@ -195,5 +196,24 @@ footer img {
 }
 
 .cartBtn {
+  cursor: pointer;
+}
+
+.cartProduct {
+  border-top: 2px solid gray;
+}
+.cartProduct span {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.cartProduct div img {
+  max-width: 15vw;
+  margin: 1rem;
+}
+.cartProduct div p {
+  text-align: center;
+  color: red;
+  font-weight: 600;
   cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

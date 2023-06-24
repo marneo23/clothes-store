@@ -185,11 +185,11 @@ footer{
 .cart{
     visibility: hidden;
     position: absolute;
-    width: 15vw;
+    max-width: 17.5vw;
+    width: 100%;
     max-height: fill-available;
-    right:0%;
     background-color: gainsboro;
-
+    right: 0;
     h3{
         text-align: center;
     }
@@ -203,4 +203,28 @@ footer{
 
 .cartBtn{
     cursor: pointer;
+}
+
+.cartProduct {
+
+    border-top: 2px solid gray;
+
+ span{
+                display:block;
+                text-align: center;
+                margin-bottom: 1rem;
+                 }
+    
+    div {
+        img{
+            max-width:15vw;
+            margin: 1rem;
+        }
+        p{
+            text-align: center;
+            color: red;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
 }
