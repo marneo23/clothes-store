@@ -181,9 +181,6 @@ footer img {
   position: absolute;
   max-width: 17.5vw;
   width: 100%;
-  max-height: -webkit-fill-available;
-  max-height: -moz-available;
-  max-height: fill-available;
   background-color: gainsboro;
   right: 0;
 }

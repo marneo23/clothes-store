@@ -3,14 +3,17 @@ const cartButton = document.getElementById("cartBtn");
 const cartSidebar = document.querySelector(".cart");
 const addedProducts = document.querySelector(".addedProducts");
 
-let cartItems = [];
+let cart = [];
 
+//terminology for easier understanding:
+//product = clothes outside the cart (products in store)
+//item = clothes inside the cart (items in cart)
 
 function renderProducts() {
   products.forEach((product) => {
     productSection.innerHTML += `
-    <div class="product" id="${product.id}">
-    <div class="productAdd">
+    <div class="product">
+    <div class="productAdd" onclick="addToCart(${product.id})">
     <img src="${product.img}" alt="Product" />
     <p>Add to Cart</p>
     <h3>${product.name}</h3>
@@ -20,41 +23,52 @@ function renderProducts() {
     
     `;
   });
-  
-  const addProductBtn = document.querySelectorAll(".productAdd")
-  addProductBtn.forEach((btn) => {
-    btn.addEventListener("click", addToCart);
-  });
 }
+renderProducts();
+  
 
-
-
+function addToCart(id){
+  
+  if(cart.some((item) => item.id === id)){
+    console.log(`${id} already in cart`)
+  } else {
+    const item = products.find((product) => product.id === id);
+    
+    console.log(cart);
+    
+    cart.push({
+      ...item,
+      numberOfUnits: 1,
+    });
+    }
+  }
+  
+ 
+//open-close cart
 cartButton.addEventListener("click", toggleCart);
 function toggleCart() {
   cartSidebar.classList.toggle("openCart");
 }
 
 
-function addToCart(event) {
-
-  
-  const productElement = event.currentTarget.closest(".product");
-  const selectedItem = products.find(
-    (product) => product.id === productElement.id
-  );
-      console.log(selectedItem.id);
-
-    addedProducts.innerHTML += `
-    <div class="cartProduct">
-    <div class="productRemove">
-    <img src= ${selectedItem.img} />
-    <h3>"${selectedItem.name}</h3>
-    <p>Remove</p>
-    </div>
-    <span>${selectedItem.price} quantity*price</span>
-    </div>
-    `;
-  }
 
 
-renderProducts();
+
+
+
+
+ /*
+   addedProducts.innerHTML += `
+   <div class="cartProduct">
+   <div class="productRemove">
+   <img src= ${item.img} />
+   <h3>"${item.name}</h3>
+   <p>Remove</p>
+   </div>
+   <span>${item.price} x1</span>
+   </div>
+   `;
+*/
+
+
+
