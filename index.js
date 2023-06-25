@@ -25,50 +25,61 @@ function renderProducts() {
   });
 }
 renderProducts();
-  
 
-function addToCart(id){
-  
-  if(cart.some((item) => item.id === id)){
-    console.log(`${id} already in cart`)
+function addToCart(id) {
+  if (cart.some((item) => item.id === id)) {
+    updateQuantity();
   } else {
     const item = products.find((product) => product.id === id);
-    
-    console.log(cart);
-    
+
     cart.push({
       ...item,
-      numberOfUnits: 1,
+      quantity: 1,
     });
-    }
+
+    updateCart();
   }
-  
- 
+}
+
+function updateCart() {
+  renderCartItems();
+}
+
+function renderCartItems() {
+  addedProducts.innerHTML = "";
+  cart.forEach((item) => {
+    addedProducts.innerHTML += `
+  <div class="cartProduct">
+  <div class="productRemove">
+  <img src= ${item.img} />
+  <h3>"${item.name}</h3>
+  <p>Remove</p>
+  </div>
+  <span>${item.price}</span>
+  <span class="changeQuantity">
+  <div class="btn menos" onclick="updateQuantity('minus', ${item.id})">-</div>
+  <div>x${item.quantity}</div>
+  <div class="btn mas" onclick="updateQuantity('minus', ${item.id})">+</div>
+  </span>
+  </div>
+  `;
+  });
+}
+
+function updateQuantity(action, id) {
+  cart = cart.map((item) => {
+    let numberOfUnits = item.numberOfUnits;
+
+    if (action === "minus") {
+      numberOfUnits--;
+    } else {
+      numberOfUnits++;
+    }
+  });
+}
+
 //open-close cart
 cartButton.addEventListener("click", toggleCart);
 function toggleCart() {
   cartSidebar.classList.toggle("openCart");
 }
-
-
-
-
-
-
-
-
- /*
-   addedProducts.innerHTML += `
-   <div class="cartProduct">
-   <div class="productRemove">
-   <img src= ${item.img} />
-   <h3>"${item.name}</h3>
-   <p>Remove</p>
-   </div>
-   <span>${item.price} x1</span>
-   </div>
-   `;
-*/
-
-
-

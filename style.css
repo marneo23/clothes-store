@@ -204,6 +204,14 @@ footer img {
   text-align: center;
   margin-bottom: 1rem;
 }
+.cartProduct span.changeQuantity {
+  display: flex;
+  justify-content: center;
+  gap: 15%;
+}
+.cartProduct span.changeQuantity .btn {
+  cursor: pointer;
+}
 .cartProduct div img {
   max-width: 15vw;
   margin: 1rem;
