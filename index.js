@@ -5,7 +5,8 @@ const addedProducts = document.querySelector(".addedProducts");
 const subtotal = document.querySelector(".subtotal");
 const cartCount = document.querySelector(".cartCount");
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
+updateCart();
 
 //terminology for easier understanding:
 //product = clothes outside the cart (products in store)
@@ -46,6 +47,8 @@ function addToCart(id) {
 function updateCart() {
   renderCartItems();
   renderSubtotal();
+
+  localStorage.setItem("CART", JSON.stringify(cart));
 }
 
 function renderSubtotal() {
