@@ -2,6 +2,8 @@ const productSection = document.querySelector(".productSection");
 const cartButton = document.getElementById("cartBtn");
 const cartSidebar = document.querySelector(".cart");
 const addedProducts = document.querySelector(".addedProducts");
+const subtotal = document.querySelector(".subtotal");
+const cartCount = document.querySelector(".cartCount");
 
 let cart = [];
 
@@ -43,6 +45,20 @@ function addToCart(id) {
 
 function updateCart() {
   renderCartItems();
+  renderSubtotal();
+}
+
+function renderSubtotal() {
+  let totalPrice = 0;
+  let totalItems = 0;
+
+  cart.forEach((item) => {
+    totalPrice += item.price * item.quantity;
+    totalItems += item.quantity;
+  });
+
+  cartCount.innerHTML = totalItems;
+  subtotal.innerHTML = `Subtotal (${totalItems}): $${totalPrice.toFixed(2)}`; //in case prices are not round
 }
 
 function renderCartItems() {
@@ -52,8 +68,8 @@ function renderCartItems() {
   <div class="cartProduct">
   <div class="productRemove">
   <img src= ${item.img} />
-  <h3>"${item.name}</h3>
-  <p>Remove</p>
+  <h3>${item.name}</h3>
+  <p onclick="removeItem(${item.id})">Remove</p>
   </div>
   <span>$${item.price}</span>
   <span class="changeQuantity">
@@ -73,7 +89,6 @@ function updateQuantity(action, id) {
     if (item.id === id) {
       if (action === "menos" && quantity > 1) {
         quantity--;
-        let updatedPrice = item.price * quantity;
       } else if (action === "mas" && quantity < item.stock) {
         quantity++;
       }
@@ -83,6 +98,12 @@ function updateQuantity(action, id) {
       quantity,
     };
   });
+
+  updateCart();
+}
+
+function removeItem(id) {
+  cart = cart.filter((item) => item.id !== id); //filter every item from cart except the one that matches selected ID
 
   updateCart();
 }

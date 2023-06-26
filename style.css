@@ -179,7 +179,7 @@ footer img {
 .cart {
   visibility: hidden;
   position: absolute;
-  max-width: 17.5vw;
+  max-width: 20vw;
   width: 100%;
   background-color: gainsboro;
   right: 0;
@@ -190,6 +190,10 @@ footer img {
 
 .cart.openCart {
   visibility: visible;
+}
+.cart.openCart .subtotal {
+  text-align: center;
+  background-color: darkgray;
 }
 
 .cartBtn {
@@ -213,7 +217,7 @@ footer img {
   cursor: pointer;
 }
 .cartProduct div img {
-  max-width: 15vw;
+  max-width: 18vw;
   margin: 1rem;
 }
 .cartProduct div p {
