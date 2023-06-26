@@ -28,7 +28,7 @@ renderProducts();
 
 function addToCart(id) {
   if (cart.some((item) => item.id === id)) {
-    updateQuantity();
+    updateQuantity("mas", id);
   } else {
     const item = products.find((product) => product.id === id);
 
@@ -55,11 +55,11 @@ function renderCartItems() {
   <h3>"${item.name}</h3>
   <p>Remove</p>
   </div>
-  <span>${item.price}</span>
+  <span>$${item.price}</span>
   <span class="changeQuantity">
-  <div class="btn menos" onclick="updateQuantity('minus', ${item.id})">-</div>
+  <div class="btn menos" onclick="updateQuantity('menos', ${item.id})">-</div>
   <div>x${item.quantity}</div>
-  <div class="btn mas" onclick="updateQuantity('minus', ${item.id})">+</div>
+  <div class="btn mas" onclick="updateQuantity('mas', ${item.id})">+</div>
   </span>
   </div>
   `;
@@ -68,14 +68,23 @@ function renderCartItems() {
 
 function updateQuantity(action, id) {
   cart = cart.map((item) => {
-    let numberOfUnits = item.numberOfUnits;
+    let quantity = item.quantity;
 
-    if (action === "minus") {
-      numberOfUnits--;
-    } else {
-      numberOfUnits++;
+    if (item.id === id) {
+      if (action === "menos" && quantity > 1) {
+        quantity--;
+        let updatedPrice = item.price * quantity;
+      } else if (action === "mas" && quantity < item.stock) {
+        quantity++;
+      }
     }
+    return {
+      ...item,
+      quantity,
+    };
   });
+
+  updateCart();
 }
 
 //open-close cart
