@@ -33,6 +33,8 @@ renderProducts();
 function renderCartItems() {
   addedProducts.innerHTML = "";
   cart.forEach((item) => {
+    const hiddenStockAlert = item.quantity === item.stock ? "" : "hidden";
+
     addedProducts.innerHTML += `
   <div class="cartProduct">
   <div class="productRemove">
@@ -46,7 +48,7 @@ function renderCartItems() {
   <div>x${item.quantity}</div>
   <div class="btn mas" onclick="updateQuantity('mas', ${item.id})">+</div>
   </span>
-  <div class="stockAlert hidden">You reached stock limit for this product</div>
+  <div class="stockAlert ${hiddenStockAlert}">You reached stock limit for this product</div>
   </div>
   `;
   });

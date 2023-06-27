@@ -3,7 +3,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
   font-family: "Lato", sans-serif;
 }
@@ -178,14 +180,30 @@ footer img {
 
 .cart {
   visibility: hidden;
-  position: absolute;
+  position: fixed;
   max-width: 20vw;
   width: 100%;
   background-color: gainsboro;
   right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding-bottom: 15vh;
 }
 .cart h3 {
   text-align: center;
+}
+.cart .checkout a {
+  color: #000000;
+  background-color: rgb(199, 199, 199);
+  border: solid black 2px;
+  text-align: center;
+  display: block;
+  padding: 1rem;
+  cursor: pointer;
+}
+.cart .checkout a:hover {
+  background-color: white;
 }
 
 .cart.openCart {
