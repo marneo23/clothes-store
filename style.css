@@ -44,8 +44,14 @@ nav ul li a {
 nav ul li a:visited {
   color: white;
 }
-nav ul li a img {
-  max-width: 25%;
+nav ul li.cartBtn {
+  display: inherit;
+  background-color: darkgrey;
+  cursor: pointer;
+}
+nav ul li.cartBtn img {
+  width: 2rem;
+  margin-right: 1rem;
 }
 
 .catalogCategories {
@@ -188,7 +194,7 @@ footer img {
   top: 0;
   bottom: 0;
   overflow-y: scroll;
-  padding-bottom: 15vh;
+  padding-bottom: 3.9vh;
 }
 .cart h3 {
   text-align: center;
@@ -212,10 +218,6 @@ footer img {
 .cart.openCart .subtotal {
   text-align: center;
   background-color: darkgray;
-}
-
-.cartBtn {
-  cursor: pointer;
 }
 
 .cartProduct {

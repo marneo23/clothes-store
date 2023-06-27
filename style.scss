@@ -42,8 +42,14 @@ nav {
                 &:visited {
                     color: white;
                 }
+            }
+            &.cartBtn {
+                display: inherit;
+                background-color: darkgrey;
+                cursor: pointer;
                 img {
-                    max-width: 25%;
+                    width: 2rem;
+                    margin-right: 1rem;
                 }
             }
         }
@@ -194,7 +200,7 @@ footer {
     top: 0;
     bottom: 0;
     overflow-y: scroll;
-    padding-bottom: 15vh;
+    padding-bottom: 3.9vh;
     h3 {
         text-align: center;
     }
@@ -221,10 +227,6 @@ footer {
         text-align: center;
         background-color: darkgray;
     }
-}
-
-.cartBtn {
-    cursor: pointer;
 }
 
 .cartProduct {
