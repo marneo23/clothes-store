@@ -1,2 +1,2 @@
 # clothes-store
-sample clothing brand website, trying to work on my responsiveness-orientation :)
+Sample website for a clothing brand, trying to work on my JS skills & responsiveness-orientation :)
