@@ -23,8 +23,8 @@
           <li>
             <a href=""> About Us </a>
           </li>
-          <li>
-            cart
+          <li id="cartBtn" class="cartBtn">
+            <img src="assets/img/cart-shopping-solid.svg" alt="cart" />
             <span class="cartCount"></span>
           </li>
         </ul>
@@ -62,65 +62,23 @@
       </section>
 
       <section class="productSection">
-        <div class="product">
-          <div class="productAdd" value="5" id="essentialsCap">
-            <img src="assets/img/catalog/cap1.jpg" alt="cap" />
-            <p>Add to Cart</p>
-            <h3>"ESSENTIALS" CAP</h3>
-          </div>
-          <span>$5</span>
-        </div>
+        <!--products will be rendered here-->
+      </section>
 
-        <div class="product">
-          <div class="productAdd" value="20" id="mochaParka">
-            <img src="assets/img/catalog/parka1.jpg" alt="parka" />
-            <p>Add to Cart</p>
-            <h3>MOCHA PARKA</h3>
-          </div>
-          <span>$20</span>
+      <section class="cart">
+        <h3>Cart</h3>
+        <div class="addedProducts">
+          <!--cart items will be rendered here-->
         </div>
-
-        <div class="product">
-          <div class="productAdd" value="10" id="natureTee">
-            <img src="assets/img/catalog/tshirt1.jpg" alt="T-Shirt" />
-            <p id="esad">Add to Cart</p>
-            <h3>NATURE TEE</h3>
-          </div>
-          <span>$10</span>
-        </div>
-
-        <div class="product">
-          <div class="productAdd" value="5" id="bucketCap">
-            <img src="assets/img/catalog/cap2.jpg" alt="cap" />
-            <p>Add to Cart</p>
-            <h3>"ESSENTIALS" BUCKET CAP</h3>
-          </div>
-          <span>$5</span>
-        </div>
-
-        <div class="product">
-          <div class="productAdd" value="22" id="nightParka">
-            <img src="assets/img/catalog/parka2.jpg" alt="parka" />
-            <p>Add to Cart</p>
-            <h3>NIGHT PARKA</h3>
-          </div>
-          <span>$22</span>
-        </div>
-
-        <div class="product">
-          <div class="productAdd" value="1" id="essentialsBag">
-            <img src="assets/img/catalog/cap3.jpg" alt="cap" />
-            <p>Add to Cart</p>
-            <h3>"ESSENTIALS" BAG</h3>
-          </div>
-          <span>$7</span>
+        <div class="subtotal"></div>
+        <div class="checkout">
+          <a>Proceed to Checkout</a>
         </div>
       </section>
     </main>
 
     <footer>
       <p>All rights reserved</p>
-      <img src="assets/img/logo.png" alt="logo" />
     </footer>
   </body>
 
