@@ -135,6 +135,13 @@ footer img {
   font-family: "Lato", sans-serif;
   font-size: 1.2rem;
 }
+.filtersSideBar .filterSelect {
+  display: flex;
+  flex-direction: column;
+}
+.filtersSideBar .filterSelect select {
+  text-align: center;
+}
 
 .productSection {
   display: flex;
@@ -251,5 +258,9 @@ footer img {
   margin-bottom: 0.3rem;
 }
 .cartProduct .hidden {
+  display: none;
+}
+
+.product.hidden {
   display: none;
 }/*# sourceMappingURL=style.css.map */

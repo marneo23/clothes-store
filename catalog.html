@@ -33,31 +33,38 @@
 
     <main class="catalogMain">
       <section class="filtersSideBar">
-        <h3>Filtros</h3>
+        <div class="sort">
+          <h3>Ordenar</h3>
 
-        <div class="filter">
-          <input type="radio" name="filter" id="masvendidos" />
-          <span>Más Vendidos</span>
+          <div class="filter">
+            <input type="radio" name="filter" id="alfabeticamenteAsc" />
+            <span>Alfabeticamente (A-Z)</span>
+          </div>
+
+          <div class="filter">
+            <input type="radio" name="filter" id="alfabeticamenteDesc" />
+            <span>Alfabeticamente (Z-A)</span>
+          </div>
+
+          <div class="filter">
+            <input type="radio" name="filter" id="precioAsc" />
+            <span>Precio (Menor-Mayor)</span>
+          </div>
+
+          <div class="filter">
+            <input type="radio" name="filter" id="precioDesc" />
+            <span>Precio (Mayor-Menor)</span>
+          </div>
         </div>
 
-        <div class="filter">
-          <input type="radio" name="filter" id="alfabeticamente1" />
-          <span>Alfabeticamente (A-Z)</span>
-        </div>
-
-        <div class="filter">
-          <input type="radio" name="filter" id="alfabeticamente2" />
-          <span>Alfabeticamente (Z-A)</span>
-        </div>
-
-        <div class="filter">
-          <input type="radio" name="filter" id="precio1" />
-          <span>Precio (Mayor-Menor)</span>
-        </div>
-
-        <div class="filter">
-          <input type="radio" name="filter" id="precio2" />
-          <span>Precio (Menor-Mayor)</span>
+        <div class="filterSelect">
+          <h3>Filtrar</h3>
+          <select name="filter" id="filter">
+            <option value="all">Todos</option>
+            <option value="parka">Parkas</option>
+            <option value="tshirt">T-Shirts</option>
+            <option value="accesory">Accessorios</option>
+          </select>
         </div>
       </section>
 

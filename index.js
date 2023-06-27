@@ -5,6 +5,11 @@ const addedProducts = document.querySelector(".addedProducts");
 const subtotal = document.querySelector(".subtotal");
 const cartCount = document.querySelector(".cartCount");
 const stockAlert = document.querySelector(".stockAlert");
+const filterInput = document.getElementById("filter");
+const parkas = document.querySelectorAll(".parka");
+const accesories = document.querySelectorAll(".accesory");
+const tshirts = document.querySelectorAll(".tshirt");
+const productsElement = document.querySelectorAll(".product");
 
 let cart = JSON.parse(localStorage.getItem("CART")) || []; //cart will be a local storage item if it has content or an empty array
 updateCart();
@@ -14,9 +19,19 @@ updateCart();
 //item = clothes inside the cart (items in cart)
 
 function renderProducts() {
+  productSection.innerHTML = "";
+  let selectedFilter = filterInput.value;
+
   products.forEach((product) => {
+    let hiddenClass = "";
+
+    if (selectedFilter !== "all" && product.category !== selectedFilter) {
+      //filtering
+      hiddenClass = "hidden";
+    }
+
     productSection.innerHTML += `
-    <div class="product">
+    <div class="product ${product.category} ${hiddenClass}">
     <div class="productAdd" onclick="addToCart(${product.id})">
     <img src="${product.img}" alt="Product" />
     <p>Add to Cart</p>
@@ -24,12 +39,47 @@ function renderProducts() {
     </div>
     <span>$${product.price}</span>
     </div>
-    
     `;
   });
 }
 renderProducts();
 
+filterInput.addEventListener("change", renderProducts);
+
+//sorting
+const sortByNameAsc = document.getElementById("alfabeticamenteAsc");
+sortByNameAsc.addEventListener("change", nameAsc);
+
+const sortByNameDesc = document.getElementById("alfabeticamenteDesc");
+sortByNameDesc.addEventListener("change", nameDesc);
+
+const sortByPriceAsc = document.getElementById("precioAsc");
+sortByPriceAsc.addEventListener("change", priceAsc);
+
+const sortByPriceDesc = document.getElementById("precioDesc");
+sortByPriceDesc.addEventListener("change", priceDesc);
+
+function nameAsc() {
+  products.sort((a, b) => a.name.localeCompare(b.name));
+  renderProducts();
+}
+
+function nameDesc() {
+  products.sort((a, b) => b.name.localeCompare(a.name));
+  renderProducts();
+}
+
+function priceAsc() {
+  products.sort((a, b) => a.price - b.price);
+  renderProducts();
+}
+
+function priceDesc() {
+  products.sort((a, b) => b.price - a.price);
+  renderProducts();
+}
+
+//cart
 function renderCartItems() {
   addedProducts.innerHTML = "";
   cart.forEach((item) => {
