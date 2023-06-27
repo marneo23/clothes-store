@@ -132,6 +132,14 @@ footer {
         font-family: "Lato", sans-serif;
         font-size: 1.2rem;
     }
+
+    .filterSelect {
+        display: flex;
+        flex-direction: column;
+        select {
+            text-align: center;
+        }
+    }
 }
 
 .productSection {
@@ -267,4 +275,8 @@ footer {
     .hidden {
         display: none;
     }
+}
+
+.product.hidden {
+    display: none;
 }
