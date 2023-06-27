@@ -225,4 +225,11 @@ footer img {
   color: red;
   font-weight: 600;
   cursor: pointer;
+}
+.cartProduct .stockAlert {
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+.cartProduct .hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

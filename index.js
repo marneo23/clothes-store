@@ -4,8 +4,9 @@ const cartSidebar = document.querySelector(".cart");
 const addedProducts = document.querySelector(".addedProducts");
 const subtotal = document.querySelector(".subtotal");
 const cartCount = document.querySelector(".cartCount");
+const stockAlert = document.querySelector(".stockAlert");
 
-let cart = JSON.parse(localStorage.getItem("CART")) || [];
+let cart = JSON.parse(localStorage.getItem("CART")) || []; //cart will be a local storage item if it has content or an empty array
 updateCart();
 
 //terminology for easier understanding:
@@ -28,6 +29,28 @@ function renderProducts() {
   });
 }
 renderProducts();
+
+function renderCartItems() {
+  addedProducts.innerHTML = "";
+  cart.forEach((item) => {
+    addedProducts.innerHTML += `
+  <div class="cartProduct">
+  <div class="productRemove">
+  <img src= ${item.img} />
+  <h3>${item.name}</h3>
+  <p onclick="removeItem(${item.id})">Remove</p>
+  </div>
+  <span>$${item.price}</span>
+  <span class="changeQuantity">
+  <div class="btn menos" onclick="updateQuantity('menos', ${item.id})">-</div>
+  <div>x${item.quantity}</div>
+  <div class="btn mas" onclick="updateQuantity('mas', ${item.id})">+</div>
+  </span>
+  <div class="stockAlert hidden">You reached stock limit for this product</div>
+  </div>
+  `;
+  });
+}
 
 function addToCart(id) {
   if (cart.some((item) => item.id === id)) {
@@ -64,29 +87,10 @@ function renderSubtotal() {
   subtotal.innerHTML = `Subtotal (${totalItems}): $${totalPrice.toFixed(2)}`; //in case prices are not round
 }
 
-function renderCartItems() {
-  addedProducts.innerHTML = "";
-  cart.forEach((item) => {
-    addedProducts.innerHTML += `
-  <div class="cartProduct">
-  <div class="productRemove">
-  <img src= ${item.img} />
-  <h3>${item.name}</h3>
-  <p onclick="removeItem(${item.id})">Remove</p>
-  </div>
-  <span>$${item.price}</span>
-  <span class="changeQuantity">
-  <div class="btn menos" onclick="updateQuantity('menos', ${item.id})">-</div>
-  <div>x${item.quantity}</div>
-  <div class="btn mas" onclick="updateQuantity('mas', ${item.id})">+</div>
-  </span>
-  </div>
-  `;
-  });
-}
-
 function updateQuantity(action, id) {
-  cart = cart.map((item) => {
+  let updatedCart = [];
+
+  cart = cart.forEach((item) => {
     let quantity = item.quantity;
 
     if (item.id === id) {
@@ -94,20 +98,19 @@ function updateQuantity(action, id) {
         quantity--;
       } else if (action === "mas" && quantity < item.stock) {
         quantity++;
+      } else if (action === "menos" && quantity === 1) {
+        return; // Skip this item to effectively remove it
       }
     }
-    return {
-      ...item,
-      quantity,
-    };
+    updatedCart.push({ ...item, quantity });
   });
 
+  cart = updatedCart;
   updateCart();
 }
 
 function removeItem(id) {
   cart = cart.filter((item) => item.id !== id); //filter every item from cart except the one that matches selected ID
-
   updateCart();
 }
 
