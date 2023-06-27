@@ -3,7 +3,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
   font-family: "Lato", sans-serif;
 }
@@ -42,8 +44,14 @@ nav ul li a {
 nav ul li a:visited {
   color: white;
 }
-nav ul li a img {
-  max-width: 25%;
+nav ul li.cartBtn {
+  display: inherit;
+  background-color: darkgrey;
+  cursor: pointer;
+}
+nav ul li.cartBtn img {
+  width: 2rem;
+  margin-right: 1rem;
 }
 
 .catalogCategories {
@@ -174,4 +182,74 @@ footer img {
 .productSection .product span {
   display: block;
   text-align: center;
+}
+
+.cart {
+  visibility: hidden;
+  position: fixed;
+  max-width: 20vw;
+  width: 100%;
+  background-color: gainsboro;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding-bottom: 3.9vh;
+}
+.cart h3 {
+  text-align: center;
+}
+.cart .checkout a {
+  color: #000000;
+  background-color: rgb(199, 199, 199);
+  border: solid black 2px;
+  text-align: center;
+  display: block;
+  padding: 1rem;
+  cursor: pointer;
+}
+.cart .checkout a:hover {
+  background-color: white;
+}
+
+.cart.openCart {
+  visibility: visible;
+}
+.cart.openCart .subtotal {
+  text-align: center;
+  background-color: darkgray;
+}
+
+.cartProduct {
+  border-top: 2px solid gray;
+}
+.cartProduct span {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.cartProduct span.changeQuantity {
+  display: flex;
+  justify-content: center;
+  gap: 15%;
+}
+.cartProduct span.changeQuantity .btn {
+  cursor: pointer;
+}
+.cartProduct div img {
+  max-width: 18vw;
+  margin: 1rem;
+}
+.cartProduct div p {
+  text-align: center;
+  color: red;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cartProduct .stockAlert {
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+.cartProduct .hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
