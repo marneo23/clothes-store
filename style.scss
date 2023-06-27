@@ -111,9 +111,6 @@ footer {
     p {
         font-family: "Lato", sans-serif;
     }
-    img {
-        max-width: 3.2rem;
-    }
 }
 
 //catalog
@@ -200,7 +197,7 @@ footer {
     top: 0;
     bottom: 0;
     overflow-y: scroll;
-    padding-bottom: 3.9vh;
+    padding-bottom: 10vh;
     h3 {
         text-align: center;
     }
@@ -250,14 +247,16 @@ footer {
 
     div {
         img {
-            max-width: 18vw;
-            margin: 1rem;
+            max-width: fill-available;
         }
         p {
             text-align: center;
             color: red;
             font-weight: 600;
             cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 

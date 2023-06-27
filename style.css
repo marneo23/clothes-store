@@ -111,9 +111,6 @@ footer {
 footer p {
   font-family: "Lato", sans-serif;
 }
-footer img {
-  max-width: 3.2rem;
-}
 
 .catalogMain {
   display: flex;
@@ -194,7 +191,7 @@ footer img {
   top: 0;
   bottom: 0;
   overflow-y: scroll;
-  padding-bottom: 3.9vh;
+  padding-bottom: 10vh;
 }
 .cart h3 {
   text-align: center;
@@ -237,14 +234,18 @@ footer img {
   cursor: pointer;
 }
 .cartProduct div img {
-  max-width: 18vw;
-  margin: 1rem;
+  max-width: -webkit-fill-available;
+  max-width: -moz-available;
+  max-width: fill-available;
 }
 .cartProduct div p {
   text-align: center;
   color: red;
   font-weight: 600;
   cursor: pointer;
+}
+.cartProduct div p:hover {
+  text-decoration: underline;
 }
 .cartProduct .stockAlert {
   text-align: center;
