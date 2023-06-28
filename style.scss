@@ -60,27 +60,32 @@ nav {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    max-height: 100vh;
     position: fixed;
+    height: 100vh;
     a {
         width: 100%;
-        max-height: 85vh;
+        height: 100vh;
         overflow: hidden;
+        text-decoration: none;
         span {
             visibility: hidden;
             position: relative;
-            bottom: 10rem;
+            bottom: 30%;
             font-size: 4rem;
-            background-color: black;
             color: white;
             opacity: 0;
             transition: 0.7s ease;
+            position: relative;
+            display: block;
+            text-align: center;
+            pointer-events: none;
         }
         &:hover span {
             visibility: visible;
             opacity: 1;
             transition: opacity 0.7s ease;
             transition-delay: 0.1s;
+            background-color: rgba(0, 0, 0, 0.2);
         }
     }
     img {
@@ -143,6 +148,11 @@ footer {
             text-align: center;
         }
     }
+}
+
+header {
+    z-index: 1;
+    position: relative;
 }
 
 .productSection {
@@ -211,6 +221,8 @@ footer {
     padding-bottom: 3.9vh;
     h3 {
         text-align: center;
+
+        margin-top: 6rem;
     }
 
     .checkout {
