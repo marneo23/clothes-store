@@ -90,7 +90,7 @@ function renderCartItems() {
   <div class="productRemove">
   <img src= ${item.img} />
   <h3>${item.name}</h3>
-  <p onclick="removeItem(${item.id})">Remove</p>
+  <p onclick="removeItem(${item.id})">Remover</p>
   </div>
   <span>$${item.price}</span>
   <span class="changeQuantity">
