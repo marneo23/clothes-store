@@ -199,7 +199,6 @@ header {
 }
 
 .cart {
-  visibility: hidden;
   position: fixed;
   max-width: 20vw;
   width: 100%;
@@ -209,10 +208,18 @@ header {
   bottom: 0;
   overflow-y: scroll;
   padding-bottom: 10vh;
+  border-left: gray 2px solid;
 }
 .cart h3 {
   text-align: center;
   margin-top: 6rem;
+}
+.cart div div div h3 {
+  margin-top: 1rem;
+}
+.cart .subtotal {
+  text-align: center;
+  background-color: darkgray;
 }
 .cart .checkout a {
   color: #000000;
@@ -227,21 +234,21 @@ header {
   background-color: white;
 }
 
-.cart.openCart {
-  visibility: visible;
-}
-.cart.openCart .subtotal {
-  text-align: center;
-  background-color: darkgray;
-}
-
 .cartProduct {
   border-top: 2px solid gray;
 }
 .cartProduct span {
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin-bottom: 1rem;
+}
+.cartProduct span p {
+  padding-left: 1.5rem;
+}
+.cartProduct span img {
+  max-width: 1.2rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
 }
 .cartProduct span.changeQuantity {
   display: flex;
@@ -275,4 +282,55 @@ header {
 
 .product.hidden {
   display: none;
+}
+
+.cart.closeCart {
+  animation-name: slideInLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  transition: top ease 0.3s, transform ease 0.3s 0.3s;
+}
+
+.cart.openCart {
+  animation-name: slideInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  transition: top ease 0.3s, transform ease 0.3s 0.3s;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .catalogMain,
+  .productSection {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .productSection,
+  .filtersSideBar {
+    margin-left: 0;
+    position: relative;
+  }
+  .cart {
+    right: inherit;
+    max-width: 100%;
+    margin-top: 10%;
+  }
 }/*# sourceMappingURL=style.css.map */

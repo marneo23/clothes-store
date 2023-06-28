@@ -90,9 +90,8 @@ function renderCartItems() {
   <div class="productRemove">
   <img src= ${item.img} />
   <h3>${item.name}</h3>
-  <p onclick="removeItem(${item.id})">Remover</p>
   </div>
-  <span>$${item.price}</span>
+  <span><p>$${item.price} </p><img src="assets/img/trash-solid.svg" onclick="removeItem(${item.id})" alt="delete"/></span>
   <span class="changeQuantity">
   <div class="btn menos" onclick="updateQuantity('menos', ${item.id})">-</div>
   <div>x${item.quantity}</div>
