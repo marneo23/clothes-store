@@ -32,7 +32,7 @@ function renderProducts() {
 
     productSection.innerHTML += `
     <div class="product ${product.category} ${hiddenClass}">
-    <div class="productAdd" onclick="addToCart(${product.id})">
+    <div class="productAdd" onclick="addToCart(${product.id}); openCartIfClosed()">
     <img src="${product.img}" alt="Product" />
     <p>Add to Cart</p>
     <h3>${product.name}</h3>
@@ -170,4 +170,10 @@ function removeItem(id) {
 cartButton.addEventListener("click", toggleCart);
 function toggleCart() {
   cartSidebar.classList.toggle("openCart");
+}
+
+function openCartIfClosed() {
+  if (!cartSidebar.classList.contains("openCart")) {
+    cartSidebar.classList.add("openCart");
+  }
 }
