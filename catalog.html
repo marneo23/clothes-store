@@ -10,25 +10,26 @@
 
   <body>
     <header>
-      <nav>
-        <h1>Shop Name</h1>
-        <ul>
-          <li>
-            <a href="index.html"> Home </a>
-          </li>
-          <li>
-            <a href="catalog.html"> Shop </a>
-          </li>
+      <section class="top-nav">
+        <div>Logo Here</div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Shop</a></li>
+          <li><a href="">About Us</a></li>
+          <li >
+            <div id="cartBtn" class="cartBtn">
 
-          <li>
-            <a href=""> About Us </a>
-          </li>
-          <li id="cartBtn" class="cartBtn">
-            <img src="assets/img/cart-shopping-solid.svg" alt="cart" />
-            <span class="cartCount"></span>
+              <img class="whiteFilter" src="assets/img/cart-shopping-solid.svg" alt="cart" />
+              <span class="cartCount"></span>
+            </div>
           </li>
         </ul>
-      </nav>
+        </ul>
+      </section>
     </header>
 
     <main class="catalogMain">

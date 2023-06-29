@@ -15,47 +15,6 @@ body {
     padding: 0;
 }
 
-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: black;
-    color: white;
-
-    ul {
-        display: flex;
-        list-style-type: none;
-
-        li {
-            margin: 10px;
-            display: block;
-            padding: 25px;
-            margin: -16px 0px -16px;
-            &:hover {
-                background-color: darkgrey;
-            }
-            a {
-                font-family: "Lato", sans-serif;
-                text-decoration: none;
-                color: white;
-                &:visited {
-                    color: white;
-                }
-            }
-            &.cartBtn {
-                display: inherit;
-                background-color: darkgrey;
-                cursor: pointer;
-                img {
-                    width: 2rem;
-                    margin-right: 1rem;
-                }
-            }
-        }
-    }
-}
-
 .catalogCategories {
     display: flex;
     flex-flow: row nowrap;
@@ -116,6 +75,7 @@ footer {
     p {
         font-family: "Lato", sans-serif;
     }
+    z-index: 2;
 }
 
 //catalog
@@ -129,7 +89,7 @@ footer {
     margin: 1rem;
     width: fill-available;
     max-width: fit-content;
-
+    z-index: 1;
     h3 {
         text-align: center;
     }
@@ -147,15 +107,11 @@ footer {
     }
 }
 
-header {
-    z-index: 1;
-    position: relative;
-}
-
 .productSection {
     display: flex;
     flex-flow: row wrap;
     position: relative;
+    z-index: 1;
     margin: 0 0 4rem 5rem;
 
     .product {
@@ -217,6 +173,7 @@ header {
     overflow-y: scroll;
     padding-bottom: 10vh;
     border-left: gray 2px solid;
+    z-index: 1;
     h3 {
         text-align: center;
 
@@ -356,5 +313,154 @@ header {
         right: inherit;
         max-width: 100%;
         margin-top: 10%;
+    }
+}
+
+.whiteFilter {
+    //couldn't find white menu icon
+    filter: invert(100%) sepia(0%) saturate(4739%) hue-rotate(1deg) brightness(134%) contrast(106%);
+}
+
+//test
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: #fff;
+    height: 50px;
+    padding: 1em;
+    position: relative;
+    z-index: 2;
+}
+
+#cartBtn {
+    display: flex;
+    width: 3rem;
+    cursor: pointer;
+    img {
+        width: 1.5rem;
+        margin-right: 0.5rem;
+    }
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+    vertical-align: middle;
+    a,
+    a:visited {
+        text-decoration: none;
+        color: white;
+        &:hover {
+            background-color: gray;
+        }
+    }
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: "";
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: "";
+    margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+@media (max-width: 600px) {
+    .menu-button-container {
+        display: flex;
+    }
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #222;
+    }
+    .menu > li:not(:last-child) {
+        border-bottom: 1px solid #444;
+    }
+
+    .cart {
+        h3 {
+            margin-top: 11rem;
+        }
     }
 }

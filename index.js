@@ -10,6 +10,7 @@ const parkas = document.querySelectorAll(".parka");
 const accesories = document.querySelectorAll(".accesory");
 const tshirts = document.querySelectorAll(".tshirt");
 const productsElement = document.querySelectorAll(".product");
+const navigationMenu = document.querySelector(".navigationMenu");
 
 let cart = JSON.parse(localStorage.getItem("CART")) || []; //cart will be a local storage item if it has content or an empty array
 updateCart();
@@ -175,4 +176,9 @@ function openCartIfClosed() {
   if (!cartSidebar.classList.contains("openCart")) {
     cartSidebar.classList.add("openCart");
   }
+}
+
+//mobile menu
+function openMobileMenu() {
+  navigationMenu.classList.toggle("mobileActive");
 }
