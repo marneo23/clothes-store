@@ -11,6 +11,7 @@ const accesories = document.querySelectorAll(".accesory");
 const tshirts = document.querySelectorAll(".tshirt");
 const productsElement = document.querySelectorAll(".product");
 const navigationMenu = document.querySelector(".navigationMenu");
+const cartButtonResponsive = document.querySelector(".cartBtnResponsive");
 
 let cart = JSON.parse(localStorage.getItem("CART")) || []; //cart will be a local storage item if it has content or an empty array
 updateCart();
@@ -168,6 +169,7 @@ function removeItem(id) {
 
 //open-close cart
 cartButton.addEventListener("click", toggleCart);
+cartButtonResponsive.addEventListener("click", toggleCart);
 function toggleCart() {
   cartSidebar.classList.toggle("openCart");
 }

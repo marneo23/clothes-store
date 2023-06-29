@@ -172,7 +172,12 @@ footer p {
 }
 .cart h3 {
   text-align: center;
-  margin-top: 6rem;
+  margin-top: 3rem;
+}
+.cart .cartBtnResponsive {
+  text-align: center;
+  margin-top: 3rem;
+  visibility: hidden;
 }
 .cart div div div h3 {
   margin-top: 1rem;
@@ -434,8 +439,8 @@ footer p {
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
   }
-  .cart h3 {
-    margin-top: 11rem;
+  .catalogMain .cart div.cartBtnResponsive {
+    visibility: visible;
   }
   .mainDigest p {
     font-size: 3rem;

@@ -176,8 +176,13 @@ footer {
     z-index: 1;
     h3 {
         text-align: center;
+        margin-top: 3rem;
+    }
 
-        margin-top: 6rem;
+    .cartBtnResponsive {
+        text-align: center;
+        margin-top: 3rem;
+        visibility: hidden;
     }
 
     div div div h3 {
@@ -457,11 +462,8 @@ footer {
     .menu > li:not(:last-child) {
         border-bottom: 1px solid #444;
     }
-
-    .cart {
-        h3 {
-            margin-top: 11rem;
-        }
+    .catalogMain .cart div.cartBtnResponsive {
+        visibility: visible;
     }
 
     //Abt us
