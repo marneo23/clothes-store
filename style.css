@@ -450,4 +450,16 @@ footer p {
     transition: 500ms;
     transform: translateY(0px);
   }
+}
+@media (max-width: 600px) {
+  .catalogCategories {
+    flex-wrap: wrap;
+    overflow: scroll;
+  }
+  .catalogCategories a span {
+    visibility: visible;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+  }
 }/*# sourceMappingURL=style.css.map */
