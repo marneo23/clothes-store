@@ -437,4 +437,17 @@ footer p {
   .cart h3 {
     margin-top: 11rem;
   }
+}
+@media (min-width: 600px) {
+  .menu > li {
+    margin: 5px;
+    margin-left: 10px;
+    font-size: 1.2em;
+    transition: 500ms;
+  }
+  .menu > li:hover {
+    padding: 0px 15px;
+    transition: 500ms;
+    transform: translateY(0px);
+  }
 }/*# sourceMappingURL=style.css.map */
