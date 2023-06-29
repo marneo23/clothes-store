@@ -36,7 +36,7 @@ function renderProducts() {
     <div class="product ${product.category} ${hiddenClass}">
     <div class="productAdd" onclick="addToCart(${product.id}); openCartIfClosed()">
     <img src="${product.img}" alt="Product" />
-    <p>Add to Cart</p>
+    <p>Agregar al carrito</p>
     <h3>${product.name}</h3>
     </div>
     <span>$${product.price}</span>
@@ -99,7 +99,7 @@ function renderCartItems() {
   <div>x${item.quantity}</div>
   <div class="btn mas" onclick="updateQuantity('mas', ${item.id})">+</div>
   </span>
-  <div class="stockAlert ${hiddenStockAlert}">You reached stock limit for this product</div>
+  <div class="stockAlert ${hiddenStockAlert}">Límite de Stock alcanzado</div>
   </div>
   `;
   });
