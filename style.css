@@ -437,6 +437,12 @@ footer p {
   .cart h3 {
     margin-top: 11rem;
   }
+  .mainDigest p {
+    font-size: 3rem;
+  }
+  .mainDigest h3 {
+    font-size: 6vw;
+  }
 }
 @media (min-width: 600px) {
   .menu > li {
@@ -462,4 +468,36 @@ footer p {
     background-color: rgba(0, 0, 0, 0.2);
     font-size: 2rem;
   }
+}
+.mainDigest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainDigest h3 {
+  font-size: 5rem;
+  text-align: center;
+}
+.mainDigest .digestText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20vh;
+}
+.mainDigest p {
+  text-align: center;
+  font-size: 2.5rem;
+  max-width: 50%;
+}
+.mainDigest .digestImage {
+  overflow: hidden;
+}
+.mainDigest .digestImage img {
+  max-width: 70vw;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px dotted;
+  padding: 0.5rem;
 }/*# sourceMappingURL=style.css.map */

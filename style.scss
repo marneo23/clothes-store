@@ -463,6 +463,15 @@ footer {
             margin-top: 11rem;
         }
     }
+
+    //Abt us
+    .mainDigest p {
+        font-size: 3rem;
+    }
+
+    .mainDigest h3 {
+        font-size: 6vw;
+    }
 }
 
 @media (min-width: 600px) {
@@ -489,6 +498,41 @@ footer {
             opacity: 1;
             background-color: rgba(0, 0, 0, 0.2);
             font-size: 2rem;
+        }
+    }
+}
+
+//About Us Section
+.mainDigest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3 {
+        font-size: 5rem;
+        text-align: center;
+    }
+
+    .digestText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20vh;
+    }
+
+    p {
+        text-align: center;
+        font-size: 2.5rem;
+        max-width: 50%;
+    }
+    .digestImage {
+        overflow: hidden;
+        img {
+            max-width: 70vw;
+            height: 100%;
+            object-fit: cover;
+            border: 1px dotted;
+            padding: 0.5rem;
         }
     }
 }
