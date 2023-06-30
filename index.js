@@ -89,6 +89,7 @@ function renderCartItems() {
 
     addedProducts.innerHTML += `
   <div class="cartProduct">
+  <div>
   <div class="productRemove">
   <img src= ${item.img} />
   <h3>${item.name}</h3>
@@ -99,6 +100,7 @@ function renderCartItems() {
   <div>x${item.quantity}</div>
   <div class="btn mas" onclick="updateQuantity('mas', ${item.id})">+</div>
   </span>
+  </div>
   <div class="stockAlert ${hiddenStockAlert}">Límite de Stock alcanzado</div>
   </div>
   `;

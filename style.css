@@ -172,12 +172,12 @@ footer p {
 }
 .cart h3 {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 .cart .cartBtnResponsive {
   text-align: center;
   margin-top: 3rem;
-  visibility: hidden;
+  display: none;
 }
 .cart div div div h3 {
   margin-top: 1rem;
@@ -224,9 +224,9 @@ footer p {
   cursor: pointer;
 }
 .cartProduct div img {
-  max-width: -webkit-fill-available;
-  max-width: -moz-available;
-  max-width: fill-available;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
 }
 .cartProduct div p {
   text-align: center;
@@ -288,6 +288,12 @@ footer p {
     justify-content: center;
     align-items: center;
   }
+  .catalogMain .cart div.cartBtnResponsive {
+    display: block;
+    width: 2rem;
+    margin: 2rem auto;
+    margin-top: 6rem;
+  }
   .productSection,
   .filtersSideBar {
     margin-left: 0;
@@ -296,7 +302,6 @@ footer p {
   .cart {
     right: inherit;
     max-width: 100%;
-    margin-top: 10%;
   }
 }
 .whiteFilter {
@@ -440,9 +445,6 @@ footer p {
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
   }
-  .catalogMain .cart div.cartBtnResponsive {
-    visibility: visible;
-  }
   .mainDigest p {
     font-size: 3rem;
   }
@@ -500,7 +502,7 @@ footer p {
   overflow: hidden;
 }
 .mainDigest .digestImage img {
-  max-width: 70vw;
+  width: 70vw;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
